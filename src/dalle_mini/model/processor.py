@@ -51,7 +51,7 @@ class DalleBartProcessorBase:
     def from_pretrained(cls, *args, **kwargs):
         tokenizer = DalleBartTokenizer.from_pretrained(*args, **kwargs)
         config = DalleBartConfig.from_pretrained(*args, **kwargs)
-        return cls(tokenizer, config.normalize_text, config.max_text_length)
+        return cls(tokenizer, config.normalize_text, config.max_text_length, low_cpu_mem_usage=True)
 
 
 class DalleBartProcessor(PretrainedFromWandbMixin, DalleBartProcessorBase):
