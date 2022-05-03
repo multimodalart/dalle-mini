@@ -23,5 +23,5 @@ class PretrainedFromWandbMixin:
                 pretrained_model_name_or_path = artifact.download(tmp_dir)
 
             return super(PretrainedFromWandbMixin, cls).from_pretrained(
-                pretrained_model_name_or_path, low_cpu_mem_usage=True, *model_args, **kwargs
+                pretrained_model_name_or_path, *model_args, **kwargs
             )
